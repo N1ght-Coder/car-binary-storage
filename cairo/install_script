@@ -8,6 +8,9 @@ SRC_URL = "https://cairographics.org/releases/cairo-1.17.8.tar.xz"
 SRC_DIR = "cairo-1.17.8"
 BUILD_DIR = "_build"
 
+def beforeinst():
+    print(":: cairo is licensed under the GNU Lesser General Public License")
+
 def build():
     if not os.path.exists(f"{SRC_DIR}.tar.xz"):
         subprocess.run(["wget", SRC_URL], check=True)
